@@ -1,5 +1,8 @@
 name: Changelog
-on: [pull_request]
+on:
+  pull_request:
+    paths:
+      pwnlib/*
 env:
   GITHUB_BASE: origin/${{ github.event.pull_request.base.ref }}
 
