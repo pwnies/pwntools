@@ -1066,6 +1066,8 @@ class ROP(object):
         elif not self._srop_call(resolvable, arguments):
             log.error('Could not resolve %r.' % resolvable)
 
+        return self
+
 
 
     def _srop_call(self, resolvable, arguments):
@@ -1158,6 +1160,7 @@ class ROP(object):
         if self.migrated:
             log.error('Cannot append to a migrated chain')
         self._chain.append(value)
+        return self
 
     def migrate(self, next_base):
         """Explicitly set $sp, by using a ``leave; ret`` gadget"""
