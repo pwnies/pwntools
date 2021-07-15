@@ -70,6 +70,7 @@ The table below shows which release corresponds to each branch, and what date th
 ## 4.7.0 (`beta`)
 
 - [#1733][1733] Update libc headers -> more syscalls available!
+- [#1828][1828] libcdb: Load debug info and unstrip libc binary
 - [#1876][1876] add `self.message` and change `sys.exc_type` to `sys.exec_info()` in PwnlibException
 - [#1877][1877] encoders error message handles when `avoid` is bytes in python3
 - [#1891][1891] Keep ROP gadgets when setting registers via setattr/call
@@ -82,6 +83,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#1921][1921] Add basic support for the bare-metal ARM specific toolchain
 
 [1733]: https://github.com/Gallopsled/pwntools/pull/1733
+[1828]: https://github.com/Gallopsled/pwntools/pull/1828
 [1876]: https://github.com/Gallopsled/pwntools/pull/1876
 [1877]: https://github.com/Gallopsled/pwntools/pull/1877
 [1891]: https://github.com/Gallopsled/pwntools/pull/1891
