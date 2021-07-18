@@ -816,6 +816,8 @@ def disasm(data, vma = 0, byte = True, offset = True, instructions = True):
 
         output0 = _run(objdump + [step2])
         output1 = output0.split('<.text>:\n')
+        if len(output1) != 2:
+            output1 = output0.split('<.text+0x0>:\n')
 
         if len(output1) != 2:
             log.error('Could not find .text in objdump output:\n%s' % output0)
