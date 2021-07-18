@@ -1511,6 +1511,27 @@ class ELF(ELFFile):
         orig_bss = self.get_section_by_name('.bss').header.sh_addr
         curr_bss = orig_bss - self.load_addr + self.address
         return curr_bss + offset
+    
+    def section_addr(self, name, offset=0):
+        """
+        Arguments:
+            name(str): Name of section
+            offset(int): Offset to add 
+
+        Returns:
+            Address of the ``name`` section, plus the specified offset.
+            
+        Examples:
+            >>> elf = ELF('chal')
+            >>> elf.section_addr('.text')
+            4198640
+
+            >>> elf.section_addr('.data',1280)
+            4212040
+        """
+        orig_section_addr = self.get_section_by_name(name).header.sh_addr
+        curr_section_addr = orig_section_addr - self.load_addr + self.address
+        return curr_section_addr + offset
 
     def __repr__(self):
         return "%s(%r)" % (self.__class__.__name__, self.path)
